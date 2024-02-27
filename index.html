@@ -1,82 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Basket Champs Unblocked - ubg235 Poki</title>
-    <meta charset="utf-8">
-
-    <meta name="format-detection" content="telephone=no">
-    <meta name="HandheldFriendly" content="true" />
+    <meta charset="UTF-8">
+    <script src="patch/js/poki-sdk.js"></script>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Basket Champs">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="HandheldFriendly" content="true" />
-    <meta name="viewport" content="initial-scale=1 maximum-scale=1 user-scalable=no minimal-ui" />
+    <meta name="viewport" content="height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui, viewport-fit=cover" />
+    <meta name="description" content="">
+    
+    <link rel="manifest" href="subwaysurfers.webmanifest">
+    <link rel="icon" href="assets/images/app-icon-16.png" type="image/png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/images/app-icon-114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/images/app-icon-72.png">
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="assets/images/app-icon-57.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/images/app-icon-57.png">
 
+    <title>Subway Surfers Web Unblocked - ubg235 Poki</title>
     <style>
-
-        html {height: 100%;}
-
-        * { -webkit-tap-highlight-color:rgba(0,0,0,0); }
-
-        body {
-            -moz-user-select: none;
-            -webkit-user-select: none;
-            -ms-user-select: none;
-            -khtml-user-select: none;
-            margin: 0px 0px 1px 0px; /* the extra 1px allows the iOS inner/outer check to work */
-            background: rgb(1, 5, 90);
+        body, html { 
+            margin: 0;
             height: 100%;
-        }
-
-        #content {
-            margin: 0 auto;
-            position: absolute;
-            width: 100%;
-            height: 100%;
-        }
-
-         #orientation {
-            margin: 0 auto;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url(assets/rotate-device.png);
+            background-color: #0b316b;
+            overflow: hidden;
+            background-image: url('assets/preload/splash.png');
             background-repeat: no-repeat;
             background-position: center;
-            background-color: rgb(0, 0, 0);
-            z-index: 999;
-            display: none;
         }
 
-        @font-face {
-            font-family: "Mirza";
-            font-style: regular;
-            src: url("assets/fonts/Mirza.ttf");
+        #message {
+            text-align: center;
+            font-size: 8px;
+            z-index: 5;
+            font-family: "Verdana", sans-serif;
+            color: #fff;
+            position: fixed;
+            width: 100%;
+            z-index: 9999;
         }
 
-        @font-face {
-            font-family: "Jomhuria";
-            font-style: regular;
-            src: url("assets/fonts/Jomhuria-Regular.ttf");
+        .dot {
+            display: inline;
+            margin-left: 0.2em;
+            margin-right: 0.2em;
+            position: relative;
+            top: -1em;
+            font-size: 3.5em;
+            opacity: 0;
+            animation: showHideDot 2.5s ease-in-out infinite;
         }
-   
+
+        .dot.one { animation-delay: 0.2s; }
+        .dot.two { animation-delay: 0.4s; }
+        .dot.three { animation-delay: 0.6s; }
+
+        @keyframes showHideDot {
+            0% { opacity: 0; }
+            50% { opacity: 1; }
+            60% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
     </style>
-
-    <script src="patch/js/poki-sdk.js"></script>
-    <script src="js/phaser.min.js"></script>
-    <script src="js/box2d-plugin-full.min.js"></script>
-    <script src="js/basket-champs.min.js?v=1.4"></script>
-
 </head>
-
 <body>
-
-<div id="content"></div>
-<div id="orientation"></div>
-  <script src="js/analytics_ubg_v1_4.js"></script>
-  <script src="js/ubg235_client_v1_2.js"></script>
+    <script>
+        window.NOSW = true;
+        window.GAME_CONFIG = {
+            pokiSdkDebug: false,
+            leaderboard: 'mockup',
+            bundlesPath: './bundles',
+        }
+        // https://github.com/pixijs/pixijs/issues/9414
+        delete Array.prototype.group;
+    </script>
+    <div id="message">
+        <h1>Loading</h1>
+        <h1 class="dot one">.</h1><h1 class="dot two">.</h1><h1 class="dot three">.</h1>
+    </div>
+    <script src="js/loading.js"></script>
+    <script src="js/boot.js"></script>
 </body>
 </html>
